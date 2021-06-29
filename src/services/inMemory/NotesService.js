@@ -36,7 +36,7 @@ class NotesService {
   }
 
   editNoteById(id, { title, body, tags }) {
-    const index = this.notes.findIndex((val) => val.id === id);
+    const index = this._notes.findIndex((val) => val.id === id);
     if (index < 0) {
       throw new Error('Gagal memperbarui catatan. Id tidak ditemukan');
     }
@@ -47,7 +47,7 @@ class NotesService {
   }
 
   deleteNoteById(id) {
-    const index = this.note.findIndex((val) => val.id === id);
+    const index = this._notes.findIndex((val) => val.id === id);
     if (index < 0) {
       throw new Error('Catatan gagal dihapus, Id tidak ditemukan');
     }
